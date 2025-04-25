@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online tool to bypass CORS and X-Frame restrictions, allowing you to access and view content from any website.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#4a6fa5">
+    <title>Website Unblocker - Bypass CORS and X-Frame Restrictions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔓</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Website Unblocker</h1>
+            <p>Enter a URL to bypass CORS and X-Frame restrictions</p>
+        </header>
+        
+        <div class="unblocker-form">
+            <div class="input-group">
+                <input type="url" id="website-url" placeholder="https://example.com" 
+                       autocomplete="off" spellcheck="false">
+                <button id="load-btn">Unblock Website</button>
+                <button id="share-btn" title="Generate Shareable Link"><i class="share-icon"></i> Share</button>
+            </div>
+            <div class="protocol-warning" id="protocol-warning">
+                <p>⚠️ URL must start with http:// or https://</p>
+            </div>
+            <div class="share-container" id="share-container">
+                <div class="share-input-group">
+                    <input type="text" id="share-url" readonly>
+                    <button id="copy-btn">Copy</button>
+                </div>
+                <div class="share-message" id="share-message"></div>
+            </div>
+        </div>
+        
+        <div class="status-message" id="status-message"></div>
+        
+        <div class="frame-container" id="frame-container">
+            <div class="frame-controls">
+                <button id="back-btn" title="Go Back"><i class="back-icon"></i> Back</button>
+                <button id="fullscreen-btn" title="Toggle Fullscreen"><i class="fullscreen-icon"></i> Fullscreen</button>
+            </div>
+            <iframe is="x-frame-bypass" id="unblocker-frame" 
+                    sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" 
+                    srcdoc="<html><body><div style='display: flex; justify-content: center; align-items: center; height: 100vh; color: #666; font-family: sans-serif;'>Enter a URL above to load a website</div></body></html>">
+            </iframe>
+        </div>
+        
+        <div class="instruction-panel">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Enter a website URL (http:// or https:// will be added automatically if missing)</li>
+                <li>Click "Unblock Website" to load it</li>
+                <li>The website will load with all assets in the frame below</li>
+                <li>Use the "Back" button to navigate to previously visited pages</li>
+                <li>Use the "Fullscreen" button for a better viewing experience</li>
+                <li>Click "Share" to generate a shareable link for this website</li>
+                <li>You can interact with the website normally within the frame</li>
+            </ol>
+            <div class="note">
+                <p><strong>Note:</strong> Some websites may still block access through technical measures.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>This tool bypasses CORS and X-Frame restrictions for educational purposes.</p>
+            <p class="creator-credit">Created by Dhruv</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
